@@ -1,5 +1,9 @@
 #pragma once
+//Insert header file　ヘッダー　むやみにインクルードしないでね、エラーの原因
 
+
+
+//ここはいじらないで　標準使用
 class
 {
 public:

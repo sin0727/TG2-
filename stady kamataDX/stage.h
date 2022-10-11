@@ -1,12 +1,12 @@
 #pragma once
-
+//Insert header file　ヘッダー　むやみにインクルードしないでね、エラーの原因
 #include"DxLib.h"
 #include<math.h>
 #include<stdio.h>
 #include<string.h>
 #include"Picter.h"
 
-
+//ステージ
 class STAGE
 {
 public:
@@ -18,12 +18,13 @@ public:
 
 	}Blo;
 
+	//テキストファイル読み込み
 	void Read()
 	{
 		FILE* fp_stage_1_1;
 		fp_stage_1_1 = fopen("./stage/sta.txt", "r");
 
-
+		//ファイル書き出し
 		FILE* fp_block_exp;
 		fp_block_exp = fopen("./stage/sta_exp.txt", "w");
 
@@ -59,7 +60,7 @@ public:
 	}
 
 
-
+	//マップ生成
 	void Out(int* PosX)
 	{
 		int pic = 0;

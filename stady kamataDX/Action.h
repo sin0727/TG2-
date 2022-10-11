@@ -1,11 +1,12 @@
 #pragma once
+//Insert header file　ヘッダー　むやみにインクルードしないでね、エラーの原因
 #include"DxLib.h"
 #include<math.h>
 #include<stdio.h>
 #include<string.h>
 #include"Stage.h"
 
-
+//プレイヤー移動　ここは更新かけるからいじらないで
 class ACTION
 {
 public:

@@ -1,4 +1,5 @@
 #pragma once
+//Insert header file　ヘッダー　むやみにインクルードしないでね、エラーの原因
 #include"DxLib.h"
 
 class
@@ -11,6 +12,7 @@ public:
 	int Block5;
 	int Player;
 
+	//画像読み込み
 	void Read()
 	{
 		sky = LoadGraph("./stage/sky.png");

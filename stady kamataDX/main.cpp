@@ -1,4 +1,4 @@
-//Preprocessor definiton
+//Preprocessor definiton　マクロ
 #define WIN_MAX_X 1920
 #define WIN_MAX_Y 1080
 #define WIN_POS_X 0
@@ -10,6 +10,7 @@
 #define STAGE_MAX_Y 1080 / 30
 #define _CRT_SECURE_NO_WARNINGS
 
+//シーン列挙
 enum MEN
 {
 	MEN_00_ACTION,
@@ -17,7 +18,7 @@ enum MEN
 };
 
 int Sce = MEN::MEN_00_ACTION;
-//Insert header file
+//Insert header file　ヘッダー　むやみにインクルードしないでね、エラーの原因
 #include"DxLib.h"
 #include<math.h>
 #include"Key.h"
@@ -26,18 +27,19 @@ int Sce = MEN::MEN_00_ACTION;
 #include"Action.h"
 
 
-//Main Function
+//Main Function　　　　　//ここはむやみに触らないでね　標準使用
 int WINAPI WinMain(
-
+	//ここはむやみに触らないでね　標準使用
 	_In_ HINSTANCE himstance,
 	_In_opt_ HINSTANCE hPrevInstance,
 	_In_ LPSTR lpCmdLine,
 	_In_ int nShowCmd)
 {
+	//ここはむやみに触らないでね　標準使用
 	ChangeWindowMode(TRUE);
 	DxLib_Init();
 
-
+	//ここはむやみに触らないでね　標準使用
 	//window init
 	SetWindowInitPosition(WIN_POS_X, WIN_POS_Y);
 	SetWindowText("sanple");
@@ -45,7 +47,11 @@ int WINAPI WinMain(
 	SetBackgroundColor(255, 255, 255);
 	SetDrawScreen(DX_SCREEN_BACK);
 
-	//Read
+
+
+
+
+	//Read //更新処理　順番きをつけてね
 	Col.Read();
 	Fon.Read();
 	Pic.Read();
@@ -59,7 +65,7 @@ int WINAPI WinMain(
 		GetKey() == 0 &&
 		Key[KEY_INPUT_ESCAPE] == 0)
 	{
-		//ゲームシーン切り替え
+		//ゲームシーン切り替え 追加したら追加を忘れずに
 		switch (Sce)
 		{
 		case MEN::MEN_00_ACTION:
@@ -67,7 +73,8 @@ int WINAPI WinMain(
 			break;
 		}
 	}
-	WaitKey();
+
+	/*WaitKey();*/
 
 	DxLib_End();
 	return 0;				// ソフトの終了 
